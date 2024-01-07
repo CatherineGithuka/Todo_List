@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}User page{% endblock %}
+{% block header %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_home.css') }}">
+    <nav>
+        <ul>
+            <a href="/user">User</a>
+        </ul>
+    </nav>
+</head>
+{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}   
+
+<h3>Tasks for {{ user.username }}</h3>
+
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.content }}
+            <form method="post" action="{{ url_for('delete_task', task_id=task.id) }}" style="display: inline;">
+                {{ form.hidden_tag() }}
+                <button type="submit" class="btn btn-dark">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+
+<h4>Add Task</h4>
+
+<form action="{{ url_for('user') }}" method='POST' class="task-form">
+    {{ form.hidden_tag() }}
+    
+    <div class="form-group">
+        <label for="content">Task:</label>
+
+        {{ form.content(class="form-control", placeholder="Enter your task", required="required") }}
+        
+        <input type="submit" value="Add Task">
+    </div>
+
+{% endblock %}

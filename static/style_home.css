@@ -1,0 +1,70 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pacifico', 'Arial', sans-serif;
+}
+
+body {
+    font-family: 'Pacifico', 'Arial', sans-serif;
+    background-color: #fff;
+    color: #000;
+    text-align: center; /* Center-align text in the body */
+}
+
+
+h2 {
+    color: #6B5B95; /* Lilac */
+}
+h4 {
+    color: #6B5B95; /* Lilac */
+    margin-left: 200px;
+    margin-right: 0px;
+}
+
+
+div {
+    margin-top: 13px;
+}
+
+/* Center-align and set max width for labels */
+label {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    margin-left: 200px;
+    margin-right: 50px;
+    max-width: 30px; /* Adjust the max-width as needed */
+    color: #000;
+    text-align: center; /* Center-align text within the label */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"]{
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: -20px;
+    max-width: 100px;
+    box-sizing: border-box;
+    font-family: 'Pacifico', 'Arial', sans-serif;
+     /* Center-align text in input elements */
+}
+
+input[type="submit"] {
+    background-color: #6B5B95; /* Lilac */
+    color: #fff;
+    cursor: pointer;
+    margin-left: 200px;
+    margin-right: 0px;
+    
+}
+
+input[type="submit"]:hover {
+    background-color: #2C2
+
+}
+form.content{
+    margin-left: 100px;
+}

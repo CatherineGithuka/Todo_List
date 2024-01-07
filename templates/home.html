@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Home page{% endblock %}
+{% block header %}
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style_home.css') }}">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <nav>
+        <ul>
+            <li><a href="/">home</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block content %} <h2>To do list</h2>
+<div>
+<h4>Register to continue !</h4>
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+         {% for msg in messages %}
+         <p>{{msg}}</p>    
+         {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+<form action="#" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password"  name="password" required><br><br>
+    
+    <input type="submit" value="submit">
+</form>
+</div>
+{% endblock %} 
